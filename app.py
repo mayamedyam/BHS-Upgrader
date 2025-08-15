@@ -23,7 +23,7 @@ if not os.path.exists('./versions/'):
     os.mkdir('./versions/')
 
 if os.getenv('VERSION') == "":
-    version = r.get("http://bhsotomat.buhikayesenin.com/apix/version.ashx").text
+    version = r.get("https://bhsotomat.nihatersoy.com/apix/version.ashx").text
     version = version[0:5]
     os.system('git clone https://github.com/mayamedyam/BHS-Worker.git ./versions/' + version)
     os.environ['VERSION'] = version
@@ -59,7 +59,7 @@ while True:
             app.terminate()
             app = subprocess.Popen(["python3", os.getcwd() + "/versions/" + os.getenv('VERSION') + "/main.py"])
         try:
-            version = r.get("http://bhsotomat.buhikayesenin.com/apix/version.ashx").text
+            version = r.get("https://bhsotomat.nihatersoy.com/apix/version.ashx").text
             version = version[0:5]
             if version != os.getenv('VERSION'):
                 print('New version found! Downloading...')
