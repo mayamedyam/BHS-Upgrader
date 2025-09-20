@@ -59,7 +59,7 @@ while True:
             app.terminate()
             app = subprocess.Popen(["python3", os.getcwd() + "/versions/" + os.getenv('VERSION') + "/main.py"])
         try:
-            version = r.get("https://bhsotomat.nihatersoy.com/apix/version.ashx").text
+            version = r.get("https://buhikayesenin.tr/apix/version.ashx").text
             version = version[0:5]
             if version != os.getenv('VERSION'):
                 print('New version found! Downloading...')
