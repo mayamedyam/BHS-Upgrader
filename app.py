@@ -23,7 +23,7 @@ if not os.path.exists('./versions/'):
     os.mkdir('./versions/')
 
 if os.getenv('VERSION') == "":
-    version = r.get("https://bhsotomat.nihatersoy.com/apix/version.ashx").text
+    version = r.get("https://buhikayesenin.tr/apix/version.ashx").text
     version = version[0:5]
     os.system('git clone https://github.com/mayamedyam/BHS-Worker.git ./versions/' + version)
     os.environ['VERSION'] = version
